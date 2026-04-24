@@ -36,16 +36,13 @@ export function CTASection() {
 
             <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-6 text-sm text-muted-foreground">
               <a href="mailto:contact@iarrd.in" className="hover:text-foreground transition-colors">
-                contact@iarrd.in
+                iarrd.official@gmail.com
               </a>
               <span className="hidden md:inline">|</span>
               <a href="mailto:investor@iarrd.in" className="hover:text-foreground transition-colors">
-                investor@iarrd.in
+                investor.iarrd@gmail.com
               </a>
-              <span className="hidden md:inline">|</span>
-              <a href="mailto:partners@iarrd.in" className="hover:text-foreground transition-colors">
-                partners@iarrd.in
-              </a>
+             
             </div>
           </div>
         </div>

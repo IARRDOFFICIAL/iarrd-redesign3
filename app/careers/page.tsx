@@ -36,95 +36,88 @@ const openPositions = [
 
 {
 title: "Astronomy Research Team Member",
-department: "Astronomy",
-location: "Remote / India",
 type: "Research Contributor",
+location: "Remote / India",
 description:
-"Participate in astronomy learning activities, observational discussions, and space science exploration supporting research-driven understanding.",
+"Participate in astronomy learning discussions, observational studies, and scientific exploration supporting structured research understanding.",
 requirements: [
 "Interest in astronomy or astrophysics",
-"Basic space science curiosity",
-"Commitment to consistent participation"
+"Willingness to learn fundamentals",
+"Consistency in participation"
 ]
 },
 
 {
 title: "Defence Research Team Member",
-department: "Defence Technology",
-location: "Remote / India",
 type: "Research Contributor",
+location: "Remote / India",
 description:
-"Support conceptual exploration related to sensing systems, surveillance technologies, and strategic engineering domains.",
+"Support conceptual research related to sensing systems, surveillance technologies, and strategic engineering domains.",
 requirements: [
 "Interest in defence technologies",
 "Electronics or communication basics helpful",
-"Motivation to learn structured concepts"
+"Structured learning mindset"
 ]
 },
 
 {
 title: "Marine Research Team Member",
-department: "Marine Technology",
-location: "Remote / India",
 type: "Research Contributor",
+location: "Remote / India",
 description:
-"Assist early-stage exploration of maritime sensing platforms, underwater monitoring ideas, and marine engineering studies.",
+"Assist exploration of maritime sensing platforms, underwater monitoring concepts, and marine engineering discussions.",
 requirements: [
 "Interest in marine systems",
 "Engineering curiosity",
-"Documentation participation mindset"
+"Documentation participation readiness"
 ]
 },
 
 {
 title: "Rocket Research Team Member",
-department: "Rocket Engineering",
-location: "Remote / India",
 type: "Research Contributor",
+location: "Remote / India",
 description:
-"Contribute to propulsion research discussions, hybrid engine concepts, and launch vehicle subsystem learning activities.",
+"Contribute to propulsion system discussions, hybrid engine learning tracks, and launch vehicle subsystem understanding.",
 requirements: [
-"Mechanical or aerospace interest preferred",
-"Curiosity toward propulsion systems",
-"Structured learning approach"
+"Interest in propulsion systems",
+"Mechanical or aerospace curiosity",
+"Structured technical learning attitude"
 ]
 },
 
 {
 title: "Satellite Research Team Member",
-department: "Satellite Systems",
-location: "Remote / India",
 type: "Research Contributor",
+location: "Remote / India",
 description:
-"Support CubeSat subsystem understanding, payload concepts, and documentation activities connected to the PrithiviSat initiative.",
+"Support CubeSat subsystem learning, payload concepts, and documentation connected to satellite platform development.",
 requirements: [
 "Interest in satellite engineering",
-"Basic electronics exposure helpful",
+"Electronics basics helpful",
 "Collaborative mindset"
 ]
 },
 
 {
 title: "R&D Innovation Team Member",
-department: "Innovation Lab",
-location: "Remote / India",
 type: "Research Contributor",
+location: "Remote / India",
 description:
-"Explore multidisciplinary experimental engineering ideas including sensing platforms, automation concepts, and emerging technologies.",
+"Explore experimental engineering ideas across sensing platforms, automation concepts, and emerging technologies.",
 requirements: [
 "Creative technical thinking",
-"Interest in experimentation",
-"Problem-solving attitude"
+"Problem solving mindset",
+"Interest in experimentation"
 ]
 },
 
 {
 title: "Software Development Team Member",
-department: "Software Engineering",
-location: "Remote / India",
 type: "Technical Contributor",
+location: "Remote / India",
 description:
-"Support development of internal tools, mission-support utilities, simulations, and engineering software platforms used across IARRD projects.",
+"Support development of simulations, internal tools, mission-support utilities, and engineering software platforms.",
 requirements: [
 "Basic programming knowledge",
 "Interest in technical software systems",
@@ -134,11 +127,10 @@ requirements: [
 
 {
 title: "Social Media & Outreach Team Member",
-department: "Communications",
-location: "Remote / India",
 type: "Contributor",
+location: "Remote / India",
 description:
-"Help communicate IARRD research progress, educational initiatives, and technical activities through digital outreach platforms.",
+"Help communicate research progress, educational initiatives, and engineering activities across outreach platforms.",
 requirements: [
 "Interest in science communication",
 "Content or design skills helpful",
@@ -148,15 +140,14 @@ requirements: [
 
 {
 title: "Fundraising & Partnerships Team Member",
-department: "Strategy & Funding",
-location: "Remote / India",
 type: "Contributor",
+location: "Remote / India",
 description:
-"Support institutional outreach, sponsorship coordination, and partnership-building efforts that strengthen long-term project sustainability.",
+"Support institutional outreach, sponsorship coordination, and partnership-building efforts strengthening project sustainability.",
 requirements: [
 "Communication confidence",
-"Organizational skills",
-"Interest in strategy and partnerships"
+"Organizational ability",
+"Interest in partnerships and strategy"
 ]
 }
 
@@ -175,7 +166,7 @@ description:
 
 {
 icon: Users,
-title: "Collaborative Learning Environment",
+title: "Collaborative Learning",
 description:
 "Work with motivated contributors building structured technical understanding together."
 },
@@ -191,7 +182,7 @@ description:
 icon: Globe,
 title: "Portfolio Development",
 description:
-"Build meaningful research and engineering experience supporting future academic and deep-tech career pathways."
+"Build meaningful research experience supporting future deep-tech academic and engineering pathways."
 }
 
 ]
@@ -202,260 +193,261 @@ export default function CareersPage() {
 
 return (
 
-
 <PageWrapper scene={<NetworkScene />}>
 
-  {/* HEADER */}
+{/* HEADER */}
 
-  <section className="pt-32 pb-24 relative">
+<section className="pt-32 pb-24 relative">
 
-    <div className="container mx-auto px-4 lg:px-8">
+<div className="container mx-auto px-4 lg:px-8">
 
-      <Link
-        href="/"
-        className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary mb-8 transition-colors"
-      >
-        <ArrowLeft className="h-4 w-4" />
-        Back to Home
-      </Link>
+<Link
+href="/"
+className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary mb-8 transition-colors"
+>
+<ArrowLeft className="h-4 w-4" />
+Back to Home
+</Link>
 
+<AnimatedSection>
 
-      <AnimatedSection>
+<div className="max-w-4xl">
 
-        <div className="max-w-4xl">
+<div className="flex items-center gap-3 mb-4">
 
-          <div className="flex items-center gap-3 mb-4">
+<div className="p-3 bg-green-500/10 rounded-xl">
+<Users className="h-8 w-8 text-green-500" />
+</div>
 
-            <div className="p-3 bg-green-500/10 rounded-xl">
-              <Users className="h-8 w-8 text-green-500" />
-            </div>
+<Badge variant="secondary" className="text-sm">
+Careers & Contributors
+</Badge>
 
-            <Badge variant="secondary" className="text-sm">
-              Careers & Contributors
-            </Badge>
+</div>
 
-          </div>
+<h1 className="text-4xl md:text-6xl font-bold mb-6">
 
+Join IARRD's{" "}
+<span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400">
+Engineering Contributor Network
+</span>
 
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance">
+</h1>
 
-            Contribute to India's{" "}
+<p className="text-xl text-muted-foreground leading-relaxed mb-8">
 
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400">
-              Next Generation Engineering Systems
-            </span>
+We welcome students, engineers, researchers, and motivated learners who want to contribute to India's growing space, defence, marine, satellite, and software capability ecosystem.
 
-          </h1>
+Selection is based on interest, commitment, and willingness to learn — not CGPA, not academic background.
 
+</p>
 
-          <p className="text-xl text-muted-foreground leading-relaxed mb-8">
+<div className="flex flex-wrap gap-4">
 
-            IARRD welcomes students, engineers, researchers, and motivated contributors who are passionate about space, defence, marine, satellite, software, and emerging technology systems. Participation is based on curiosity, consistency, and willingness to learn together through structured engineering collaboration.
+<Button asChild size="lg" className="gap-2">
+<a href="#opportunities">
+<Briefcase className="h-4 w-4" />
+View Opportunities
+</a>
+</Button>
 
-          </p>
+<Button asChild size="lg" variant="outline" className="gap-2">
+<Link href="/contact">
+<Users className="h-4 w-4" />
+Apply as Contributor
+</Link>
+</Button>
 
+</div>
 
-          <div className="flex flex-wrap gap-4">
+</div>
 
-            <Button size="lg" className="gap-2">
-              <Briefcase className="h-4 w-4" />
-              View Opportunities
-            </Button>
+</AnimatedSection>
 
-            <Button size="lg" variant="outline" className="gap-2">
-              <Users className="h-4 w-4" />
-              Join as Contributor
-            </Button>
+</div>
 
-          </div>
+</section>
 
-        </div>
 
-      </AnimatedSection>
+{/* OPPORTUNITIES */}
 
-    </div>
+<section id="opportunities" className="py-24 relative">
 
-  </section>
+<div className="container mx-auto px-4 lg:px-8">
 
+<AnimatedSection>
 
-  {/* OPPORTUNITIES GRID */}
+<div className="text-center max-w-3xl mx-auto mb-16">
 
-  <section className="py-24 relative">
+<h2 className="text-3xl md:text-4xl font-bold mb-4">
+Contribution Opportunities
+</h2>
 
-    <div className="container mx-auto px-4 lg:px-8">
+<p className="text-lg text-muted-foreground">
+Choose a team aligned with your interest and grow through structured engineering participation.
+</p>
 
-      <AnimatedSection>
+</div>
 
-        <div className="text-center max-w-3xl mx-auto mb-16">
+</AnimatedSection>
 
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Contribution Opportunities
-          </h2>
 
-          <p className="text-lg text-muted-foreground">
-            Join one of our multidisciplinary teams and grow through real engineering exposure, structured learning, and collaborative research participation.
-          </p>
+<StaggeredContainer
+className="grid md:grid-cols-2 gap-8"
+staggerDelay={150}
+>
 
-        </div>
+{openPositions.map((position, index) => (
 
-      </AnimatedSection>
+<Card
+key={index}
+className="group hover:border-green-500/50 transition-all"
+>
 
+<CardHeader>
 
-      <StaggeredContainer
-        className="grid md:grid-cols-2 gap-8"
-        staggerDelay={150}
-      >
+<div className="flex justify-between items-start mb-2">
 
-        {openPositions.map((position, index) => (
+<CardTitle className="text-xl group-hover:text-green-600 transition-colors">
+{position.title}
+</CardTitle>
 
-          <Card
-            key={index}
-            className="group hover:border-green-500/50 transition-all"
-          >
+<Badge variant="secondary">
+{position.type}
+</Badge>
 
-            <CardHeader>
+</div>
 
-              <div className="flex justify-between items-start mb-2">
+<div className="flex flex-wrap gap-2 text-sm text-muted-foreground">
 
-                <CardTitle className="text-xl group-hover:text-green-600 transition-colors">
-                  {position.title}
-                </CardTitle>
+<span className="flex items-center gap-1">
+<MapPin className="h-3 w-3" />
+{position.location}
+</span>
 
-                <Badge variant="secondary">
-                  {position.type}
-                </Badge>
+</div>
 
-              </div>
+</CardHeader>
 
 
-              <div className="flex flex-wrap gap-2 text-sm text-muted-foreground">
+<CardContent>
 
-                <span className="flex items-center gap-1">
-                  <MapPin className="h-3 w-3" />
-                  {position.location}
-                </span>
+<p className="text-muted-foreground mb-4">
+{position.description}
+</p>
 
-              </div>
+<div className="mb-4">
 
-            </CardHeader>
+<h4 className="font-semibold mb-2">
+Requirements
+</h4>
 
+<ul className="text-sm text-muted-foreground space-y-1">
 
-            <CardContent>
+{position.requirements.map((req, i) => (
 
-              <p className="text-muted-foreground mb-4">
-                {position.description}
-              </p>
+<li
+key={i}
+className="flex items-center gap-2"
+>
+<div className="w-1.5 h-1.5 bg-green-500 rounded-full" />
+{req}
+</li>
 
+))}
 
-              <div className="mb-4">
+</ul>
 
-                <h4 className="font-semibold mb-2">
-                  Requirements
-                </h4>
+</div>
 
-                <ul className="text-sm text-muted-foreground space-y-1">
+<Button
+asChild
+className="w-full"
+variant="outline"
+>
+<Link href={`/apply?role=${encodeURIComponent(position.title)}`}>
+Submit Contributor Application
+</Link>
+</Button>
 
-                  {position.requirements.map((req, i) => (
+</CardContent>
 
-                    <li
-                      key={i}
-                      className="flex items-center gap-2"
-                    >
-                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full" />
-                      {req}
-                    </li>
+</Card>
 
-                  ))}
+))}
 
-                </ul>
+</StaggeredContainer>
 
-              </div>
+</div>
 
+</section>
 
-              <Button className="w-full" variant="outline">
-                Express Interest
-              </Button>
 
-            </CardContent>
+{/* BENEFITS */}
 
-          </Card>
+<section className="py-24 relative bg-muted/30">
 
-        ))}
+<div className="container mx-auto px-4 lg:px-8">
 
-      </StaggeredContainer>
+<AnimatedSection>
 
-    </div>
+<div className="text-center max-w-3xl mx-auto mb-16">
 
-  </section>
+<h2 className="text-3xl md:text-4xl font-bold mb-4">
+Why Join IARRD?
+</h2>
 
+<p className="text-lg text-muted-foreground">
+Gain real engineering exposure while contributing to early-stage deep-tech systems.
+</p>
 
-  {/* BENEFITS */}
+</div>
 
-  <section className="py-24 relative bg-muted/30">
+</AnimatedSection>
 
-    <div className="container mx-auto px-4 lg:px-8">
 
-      <AnimatedSection>
+<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-        <div className="text-center max-w-3xl mx-auto mb-16">
+{benefits.map((benefit, index) => (
 
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Why Join IARRD?
-          </h2>
+<Card
+key={index}
+className="text-center group hover:border-green-500/50 transition-all"
+>
 
-          <p className="text-lg text-muted-foreground">
-            Build meaningful technical exposure while contributing to early-stage engineering initiatives across multiple advanced technology domains.
-          </p>
+<CardHeader>
 
-        </div>
+<div className="mx-auto p-3 bg-green-500/10 rounded-xl w-fit mb-4">
 
-      </AnimatedSection>
+<benefit.icon className="h-6 w-6 text-green-500" />
 
+</div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<CardTitle className="text-lg">
+{benefit.title}
+</CardTitle>
 
-        {benefits.map((benefit, index) => (
+</CardHeader>
 
-          <Card
-            key={index}
-            className="text-center group hover:border-green-500/50 transition-all"
-          >
+<CardContent>
 
-            <CardHeader>
+<p className="text-muted-foreground text-sm">
+{benefit.description}
+</p>
 
-              <div className="mx-auto p-3 bg-green-500/10 rounded-xl w-fit mb-4">
+</CardContent>
 
-                <benefit.icon className="h-6 w-6 text-green-500" />
+</Card>
 
-              </div>
+))}
 
-              <CardTitle className="text-lg">
-                {benefit.title}
-              </CardTitle>
+</div>
 
-            </CardHeader>
+</div>
 
-            <CardContent>
-
-              <p className="text-muted-foreground text-sm">
-                {benefit.description}
-              </p>
-
-            </CardContent>
-
-          </Card>
-
-        ))}
-
-      </div>
-
-    </div>
-
-  </section>
-
+</section>
 
 </PageWrapper>
-
 
 )
 

@@ -1,179 +1,380 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ===============================
+DARK MODE STRATEGY
+=============================== */
 
 @custom-variant dark (&:is(.dark *));
 
-/* IARRD Space Tech Theme - Professional Dark Mode */
+
+/* ===============================
+IARRD COLOR SYSTEM
+Professional Deep-Tech Theme
+=============================== */
+
 :root {
+
   --background: oklch(0.11 0.01 260);
-  --foreground: oklch(0.95 0.01 260);
+  --foreground: oklch(0.96 0.01 260);
+
   --card: oklch(0.14 0.01 260);
   --card-foreground: oklch(0.95 0.01 260);
+
   --popover: oklch(0.14 0.01 260);
   --popover-foreground: oklch(0.95 0.01 260);
+
   --primary: oklch(0.65 0.15 195);
   --primary-foreground: oklch(0.12 0.01 260);
+
   --secondary: oklch(0.20 0.02 260);
   --secondary-foreground: oklch(0.90 0.01 260);
+
   --muted: oklch(0.20 0.02 260);
   --muted-foreground: oklch(0.60 0.02 260);
+
   --accent: oklch(0.55 0.12 195);
   --accent-foreground: oklch(0.98 0.01 260);
+
   --destructive: oklch(0.55 0.22 25);
   --destructive-foreground: oklch(0.98 0.01 260);
+
   --border: oklch(0.25 0.02 260);
   --input: oklch(0.20 0.02 260);
   --ring: oklch(0.65 0.15 195);
-  --chart-1: oklch(0.65 0.15 195);
-  --chart-2: oklch(0.60 0.12 170);
-  --chart-3: oklch(0.55 0.10 220);
-  --chart-4: oklch(0.70 0.14 180);
-  --chart-5: oklch(0.50 0.08 240);
-  --radius: 0.5rem;
-  --sidebar: oklch(0.13 0.01 260);
-  --sidebar-foreground: oklch(0.95 0.01 260);
-  --sidebar-primary: oklch(0.65 0.15 195);
-  --sidebar-primary-foreground: oklch(0.12 0.01 260);
-  --sidebar-accent: oklch(0.20 0.02 260);
-  --sidebar-accent-foreground: oklch(0.95 0.01 260);
-  --sidebar-border: oklch(0.25 0.02 260);
-  --sidebar-ring: oklch(0.65 0.15 195);
+
+  --radius: 0.6rem;
 }
 
-.dark {
-  --background: oklch(0.11 0.01 260);
-  --foreground: oklch(0.95 0.01 260);
-  --card: oklch(0.14 0.01 260);
-  --card-foreground: oklch(0.95 0.01 260);
-  --popover: oklch(0.14 0.01 260);
-  --popover-foreground: oklch(0.95 0.01 260);
-  --primary: oklch(0.65 0.15 195);
-  --primary-foreground: oklch(0.12 0.01 260);
-  --secondary: oklch(0.20 0.02 260);
-  --secondary-foreground: oklch(0.90 0.01 260);
-  --muted: oklch(0.20 0.02 260);
-  --muted-foreground: oklch(0.60 0.02 260);
-  --accent: oklch(0.55 0.12 195);
-  --accent-foreground: oklch(0.98 0.01 260);
-  --destructive: oklch(0.55 0.22 25);
-  --destructive-foreground: oklch(0.98 0.01 260);
-  --border: oklch(0.25 0.02 260);
-  --input: oklch(0.20 0.02 260);
-  --ring: oklch(0.65 0.15 195);
-  --chart-1: oklch(0.65 0.15 195);
-  --chart-2: oklch(0.60 0.12 170);
-  --chart-3: oklch(0.55 0.10 220);
-  --chart-4: oklch(0.70 0.14 180);
-  --chart-5: oklch(0.50 0.08 240);
-  --sidebar: oklch(0.13 0.01 260);
-  --sidebar-foreground: oklch(0.95 0.01 260);
-  --sidebar-primary: oklch(0.65 0.15 195);
-  --sidebar-primary-foreground: oklch(0.12 0.01 260);
-  --sidebar-accent: oklch(0.20 0.02 260);
-  --sidebar-accent-foreground: oklch(0.95 0.01 260);
-  --sidebar-border: oklch(0.25 0.02 260);
-  --sidebar-ring: oklch(0.65 0.15 195);
-}
+
+/* ===============================
+TAILWIND THEME MAPPING
+=============================== */
 
 @theme inline {
-  --font-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
-  --font-mono: 'Space Grotesk', var(--font-space-grotesk), monospace;
+
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-space-grotesk), monospace;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
+
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
+
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
+
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
+
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
+
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
 
+
+/* ===============================
+BASE LAYER
+=============================== */
+
 @layer base {
+
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
+
   html {
     scroll-behavior: smooth;
   }
+
+  body {
+
+    @apply bg-background text-foreground;
+
+    font-feature-settings:
+      "kern" 1,
+      "liga" 1,
+      "calt" 1;
+
+    text-rendering: optimizeLegibility;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
 }
 
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.2;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.3;
-  }
-}
+
+/* ===============================
+GLOBAL ANIMATIONS
+Used across immersive sections
+=============================== */
 
 @keyframes float {
+
   0%, 100% {
     transform: translateY(0);
   }
-  50% {
-    transform: translateY(-10px);
-  }
-}
 
-@keyframes glow {
-  0%, 100% {
-    box-shadow: 0 0 20px var(--primary);
-  }
   50% {
-    box-shadow: 0 0 40px var(--primary);
+    transform: translateY(-12px);
   }
+
 }
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
 
+
+
+@keyframes glow {
+
+  0%, 100% {
+    box-shadow: 0 0 18px var(--primary);
+  }
+
+  50% {
+    box-shadow: 0 0 40px var(--primary);
+  }
+
+}
+
 .animate-glow {
   animation: glow 3s ease-in-out infinite;
 }
 
-/* Professional Typography Enhancements */
-.prose-enhanced {
-  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+
+/* ===============================
+GRADIENT TEXT
+Hero headings support
+=============================== */
+
+.gradient-text {
+
+  background: linear-gradient(
+    90deg,
+    #0ea5e9,
+    #38bdf8,
+    #22c55e
+  );
+
+  background-size: 200% auto;
+
+  animation: gradientShift 8s linear infinite;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+
 }
 
-/* Custom Scrollbar */
+
+@keyframes gradientShift {
+
+  0% { background-position: 0% center; }
+
+  100% { background-position: 200% center; }
+
+}
+
+
+
+/* ===============================
+CARD MOTION EFFECT
+Used across domain blocks
+=============================== */
+
+.card-hover {
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+
+}
+
+.card-hover:hover {
+
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 20px 45px rgba(0,0,0,.35);
+
+}
+
+
+/* ===============================
+PARTNERS LOGO STRIP (AUTO SCROLL)
+Premium aerospace-grade interaction
+=============================== */
+
+/* animation engine */
+
+@keyframes partnerScroll {
+
+  from {
+    transform: translate3d(0,0,0);
+  }
+
+  to {
+    transform: translate3d(-50%,0,0);
+  }
+
+}
+
+
+/* wrapper (handles fade edges + tilt perspective) */
+
+.partner-strip-wrapper {
+
+  position: relative;
+
+  overflow: hidden;
+
+  perspective: 1200px;
+
+  --logo-scroll-speed: 22s;
+
+}
+
+
+/* scrolling track */
+
+.scroll-container {
+
+  display: flex;
+
+  width: max-content;
+
+  animation: partnerScroll var(--logo-scroll-speed) linear infinite;
+
+  will-change: transform;
+
+  transform-style: preserve-3d;
+
+  transition: transform .25s ease;
+
+}
+
+
+/* REMOVE hard pause on hover */
+/* replaced by dynamic slowdown via JS */
+
+.scroll-container:hover {
+
+  animation-play-state: running;
+
+}
+
+
+
+/* ===============================
+LOGO TILT INTERACTION SUPPORT
+JS will control these variables
+=============================== */
+
+.partner-strip-wrapper {
+
+  --tiltX: 0deg;
+  --tiltY: 0deg;
+
+}
+
+.scroll-container {
+
+  transform:
+
+    rotateX(var(--tiltX))
+
+    rotateY(var(--tiltY));
+
+}
+
+
+
+/* ===============================
+EDGE FADE EFFECT (GPU MASK VERSION)
+Cleaner than gradient overlays
+=============================== */
+
+.partner-strip-wrapper {
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+
+}
+
+
+
+/* ===============================
+OPTIONAL LOGO HOVER DEPTH EFFECT
+Adds research-lab feel
+=============================== */
+
+.scroll-container img {
+
+  transition:
+
+    transform .35s ease,
+
+    filter .35s ease,
+
+    opacity .35s ease;
+
+  transform: translateZ(0);
+
+}
+
+
+.scroll-container img:hover {
+
+  transform:
+
+    translateY(-4px)
+
+    scale(1.04);
+
+  filter: brightness(1.08);
+
+}
+
+/* ===============================
+CUSTOM SCROLLBAR
+=============================== */
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -183,59 +384,52 @@
 }
 
 ::-webkit-scrollbar-thumb {
+
   background: var(--primary);
+
   border-radius: 4px;
+
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary);
-  opacity: 0.8;
+  opacity: .85;
 }
 
-/* Enhanced Focus States */
-.focus-enhanced:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
-  border-radius: 4px;
-}
 
-/* Professional Card Hover Effects */
-.card-professional {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.card-professional:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
+/* ===============================
+SPACE PARTICLE BACKDROP
+Hero background helper
+=============================== */
 
-/* Gradient Text Animation */
-.gradient-text-animated {
-  background: linear-gradient(-45deg, #0ea5e9, #f59e0b, #10b981, #8b5cf6);
-  background-size: 400% 400%;
-  animation: gradient-shift 8s ease infinite;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Particle Background Effect */
 .particles-bg::before {
-  content: '';
+
+  content: "";
+
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image:
-    radial-gradient(circle at 20% 80%, rgba(14, 165, 233, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+
+  inset: 0;
+
+  background:
+
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(14,165,233,.12),
+      transparent 50%
+    ),
+
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(59,130,246,.10),
+      transparent 50%
+    ),
+
+    radial-gradient(
+      circle at 40% 40%,
+      rgba(16,185,129,.08),
+      transparent 50%
+    );
+
   pointer-events: none;
+
 }
