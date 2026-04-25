@@ -84,10 +84,10 @@ const milestones = [
 ];
 
 const stats = [
-  { icon: Users, value: "25+", label: "Team Members" },
-  { icon: Lightbulb, value: "5", label: "Patents Filed" },
+  { icon: Users, value: "40+", label: "Team Members" },
+  { icon: Lightbulb, value: "5", label: "Domains Worked On" },
   { icon: Award, value: "3", label: "Active Projects" },
-  { icon: Globe, value: "10+", label: "Partners" },
+  { icon: Globe, value: "2+", label: "Partners" },
 ]
 
 export default function AboutPage() {

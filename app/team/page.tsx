@@ -37,7 +37,7 @@ const leadership = [
 
   {
     name: "Tamizh Amuthan",
-    role: "Chief Science Officer & Astronomy Team Lead",
+    role: "Chief Strategic Officer & Astronomy Team Lead",
     image: "/team/tamizh.jpg",
     bio:
       "Leads astronomy research activities including observational workflows, constellation tracking concepts, and development of ground-support infrastructure for future space missions."

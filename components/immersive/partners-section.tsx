@@ -11,6 +11,7 @@ export function PartnersSection() {
     "/partners/ntls.png",
     "/partners/msme.png",
     "/partners/startup-india.png",
+    "/partners/spacemurak.png",
     "/partners/startup-tn.png",
     "/partners/inspace.png",
     "/partners/departmentofspace.png",
@@ -23,8 +24,14 @@ export function PartnersSection() {
     const wrapper = wrapperRef.current
     if (!wrapper) return
 
-    let targetSpeed = 22
-    let currentSpeed = 22
+
+    /* base motion values */
+
+    const baseSpeed = 26
+    const slowSpeed = 48
+
+    let targetSpeed = baseSpeed
+    let currentSpeed = baseSpeed
 
     let targetTiltX = 0
     let targetTiltY = 0
@@ -33,12 +40,14 @@ export function PartnersSection() {
     let currentTiltY = 0
 
 
-    const easing = 0.08   // physics smoothing factor
+    const easing = 0.05
+
+    let animationFrame: number
 
 
     const animate = () => {
 
-      /* interpolate speed */
+      /* inertia interpolation */
 
       currentSpeed += (targetSpeed - currentSpeed) * easing
 
@@ -48,23 +57,16 @@ export function PartnersSection() {
       )
 
 
-      /* interpolate tilt */
+      /* tilt smoothing */
 
       currentTiltX += (targetTiltX - currentTiltX) * easing
       currentTiltY += (targetTiltY - currentTiltY) * easing
 
-      wrapper.style.setProperty(
-        "--tiltX",
-        `${currentTiltX}deg`
-      )
-
-      wrapper.style.setProperty(
-        "--tiltY",
-        `${currentTiltY}deg`
-      )
+      wrapper.style.setProperty("--tiltX", `${currentTiltX}deg`)
+      wrapper.style.setProperty("--tiltY", `${currentTiltY}deg`)
 
 
-      requestAnimationFrame(animate)
+      animationFrame = requestAnimationFrame(animate)
 
     }
 
@@ -80,8 +82,6 @@ export function PartnersSection() {
       const centerY = rect.top + rect.height / 2
 
 
-      /* normalized offsets */
-
       const offsetX =
         (e.clientX - centerX) / rect.width
 
@@ -89,20 +89,32 @@ export function PartnersSection() {
         (e.clientY - centerY) / rect.height
 
 
-      /* update tilt targets */
+      /* subtle tilt */
 
-      targetTiltY = offsetX * 6
-      targetTiltX = -offsetY * 4
+      targetTiltY = offsetX * 3
+      targetTiltX = -offsetY * 2
 
 
-      /* update speed target */
+      /* proximity slowdown */
 
       const distance =
         Math.abs(e.clientX - centerX) /
         (rect.width / 2)
 
+
+      const proximity =
+        1 - Math.min(distance, 1)
+
+
+      const eased =
+        proximity * proximity
+
+
+      /* slow when cursor near */
+
       targetSpeed =
-        22 + distance * 40
+        baseSpeed +
+        eased * (slowSpeed - baseSpeed)
 
     }
 
@@ -111,33 +123,22 @@ export function PartnersSection() {
 
       targetTiltX = 0
       targetTiltY = 0
-      targetSpeed = 22
+
+      targetSpeed = baseSpeed
 
     }
 
 
-    window.addEventListener(
-      "mousemove",
-      handleMouseMove
-    )
-
-    window.addEventListener(
-      "mouseleave",
-      handleLeave
-    )
+    wrapper.addEventListener("mousemove", handleMouseMove)
+    wrapper.addEventListener("mouseleave", handleLeave)
 
 
     return () => {
 
-      window.removeEventListener(
-        "mousemove",
-        handleMouseMove
-      )
+      cancelAnimationFrame(animationFrame)
 
-      window.removeEventListener(
-        "mouseleave",
-        handleLeave
-      )
+      wrapper.removeEventListener("mousemove", handleMouseMove)
+      wrapper.removeEventListener("mouseleave", handleLeave)
 
     }
 

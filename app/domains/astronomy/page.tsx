@@ -2,236 +2,487 @@
 
 import Link from "next/link"
 import dynamic from "next/dynamic"
-import { ArrowLeft, Telescope, Cpu, Brain, Database, Zap, Star, Orbit } from "lucide-react"
+import {
+  ArrowLeft,
+  Telescope,
+  Brain,
+  Database,
+  Cpu,
+  Zap
+} from "lucide-react"
+
 import { PageWrapper } from "@/components/immersive/page-wrapper"
-import { AnimatedSection, StaggeredContainer } from "@/components/immersive/animated-section"
+import {
+  AnimatedSection,
+  StaggeredContainer
+} from "@/components/immersive/animated-section"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 
+
 const TelescopeScene = dynamic(
-  () => import("@/components/3d/telescope-scene").then(mod => ({ default: mod.TelescopeScene })),
+  () =>
+    import("@/components/3d/telescope-scene").then(
+      mod => ({ default: mod.TelescopeScene })
+    ),
   { ssr: false }
 )
 
+
+/* ===============================
+CAPABILITIES
+=============================== */
+
 const capabilities = [
+
+  {
+    icon: Telescope,
+    title: "Astronomical Image Processing Systems",
+    description:
+      "Advanced computational enhancement workflows improving telescope imagery through noise reduction, distortion correction, and resolution reconstruction.",
+    tags: [
+      "Image Enhancement",
+      "Noise Reduction",
+      "Super-Resolution"
+    ]
+  },
+
   {
     icon: Brain,
-    title: "AI-Powered Analysis",
-    description: "Machine learning algorithms for automated celestial object detection and classification with 98%+ accuracy.",
-    features: ["Real-time processing", "Neural networks", "Pattern recognition"]
+    title: "AI-Based Celestial Object Detection",
+    description:
+      "Deep-learning-assisted detection and classification pipelines supporting identification of stars, galaxies, and other celestial bodies from observational datasets.",
+    tags: [
+      "CNN Models",
+      "Object Detection",
+      "Astrophysical Classification"
+    ]
   },
+
   {
     icon: Database,
-    title: "Data Processing",
-    description: "Advanced data pipelines for processing astronomical observations from multiple telescopes and sensors.",
-    features: ["Big data analytics", "Real-time streaming", "Data fusion"]
+    title: "Space Data Intelligence & Analytics",
+    description:
+      "Large-scale astronomical dataset processing supporting anomaly discovery, celestial pattern analysis, and predictive modeling workflows.",
+    tags: [
+      "Data Analytics",
+      "Predictive Modeling",
+      "Space Intelligence"
+    ]
   },
+
   {
-    icon: Orbit,
-    title: "Orbital Mechanics",
-    description: "Precise orbital calculations and trajectory optimization for satellite and space mission planning.",
-    features: ["Trajectory optimization", "Orbital prediction", "Mission planning"]
-  },
-  {
-    icon: Star,
-    title: "Stellar Analysis",
-    description: "Comprehensive stellar spectroscopy and photometry for understanding star formation and evolution.",
-    features: ["Spectral analysis", "Light curve analysis", "Stellar classification"]
+    icon: Cpu,
+    title: "Computational Astrophysics Systems",
+    description:
+      "Scientific computing pipelines supporting simulation-driven interpretation of cosmic phenomena and large-scale observational datasets.",
+    tags: [
+      "Simulation Systems",
+      "Scientific Computing",
+      "Astrophysics Models"
+    ]
   }
+
 ]
+
+
+/* ===============================
+PROJECTS
+=============================== */
 
 const projects = [
+
   {
-    name: "IRAI-Q2",
-    description: "AI-powered astronomy intelligence system for real-time celestial analysis and autonomous observation scheduling.",
-    status: "Beta Release",
-    technologies: ["Python", "TensorFlow", "OpenCV", "PostgreSQL"]
+    name:
+      "AI-Powered Astronomical Image Enhancement & Object Detection System",
+
+    status: "Development",
+
+    description:
+      "Computational image-processing framework designed to enhance astronomical imagery affected by atmospheric turbulence, sensor noise, and optical distortions using filtering pipelines and CNN-based feature extraction workflows.",
+
+    tags: [
+      "Image Processing",
+      "CNN Models",
+      "Celestial Detection",
+      "Space Imaging"
+    ]
   },
+
   {
-    name: "Ground Station Network",
-    description: "Advanced telescope arrays and ground infrastructure for continuous astronomical monitoring.",
-    status: "Operational",
-    technologies: ["Radio Astronomy", "Optical Systems", "Data Centers"]
+    name:
+      "Intelligent Celestial Data Analysis Platform",
+
+    status: "Development",
+
+    description:
+      "AI-assisted astronomy analytics platform integrating multi-source observational datasets to support celestial pattern recognition, object classification, and predictive astrophysical modeling workflows.",
+
+    tags: [
+      "Astro Data Modeling",
+      "AI Analytics",
+      "Pattern Recognition",
+      "Space Intelligence"
+    ]
   }
+
 ]
 
-const achievements = [
-  "98% accuracy in asteroid detection trials",
-  "24/7 autonomous telescope operations",
-  "Integration with ISRO's astronomical network",
-  "Published 15+ research papers in peer-reviewed journals"
+
+/* ===============================
+FOCUS AREAS
+=============================== */
+
+const focusAreas = [
+
+  "Astronomical Image Enhancement (Gaussian Filtering & Deblurring)",
+  "Celestial Object Detection using CNN Models",
+  "Feature Extraction (Brightness, Shape & Spectral Patterns)",
+  "Space Data Analytics & Predictive Modeling",
+  "Automated Astronomical Observation Workflows"
+
 ]
+
 
 export default function AstronomyPage() {
+
   return (
+
     <PageWrapper scene={<TelescopeScene />}>
-      {/* Header */}
-      <section className="pt-32 pb-24 relative">
+
+      {/* HERO */}
+
+      <section className="pt-32 pb-24">
+
         <div className="container mx-auto px-4 lg:px-8">
-          <Link href="/" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary mb-8 transition-colors">
+
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary mb-8 transition-colors"
+          >
+
             <ArrowLeft className="h-4 w-4" />
+
             Back to Home
+
           </Link>
 
+
           <AnimatedSection>
+
             <div className="max-w-4xl">
+
               <div className="flex items-center gap-3 mb-4">
+
                 <div className="p-3 bg-cyan-500/10 rounded-xl">
+
                   <Telescope className="h-8 w-8 text-cyan-500" />
+
                 </div>
-                <Badge variant="secondary" className="text-sm">
-                  Astronomy Domain
+
+                <Badge variant="secondary">
+
+                  Space Division
+
                 </Badge>
+
               </div>
 
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance">
-                Advanced{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
-                  Astronomical Intelligence
-                </span>
+
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+
+                Astronomic Telemetric System
+
               </h1>
 
-              <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                Pioneering AI-driven astronomy with autonomous observation systems,
-                real-time celestial analysis, and cutting-edge data processing capabilities.
-                Our technology enables unprecedented insights into the universe.
+
+              <p className="text-xl text-muted-foreground mb-8">
+
+                AI-driven solutions for astronomical imaging, celestial analysis,
+                and space data intelligence supporting computational observation
+                pipelines aligned with modern astrophysics and deep-space research initiatives.
+
               </p>
+
 
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="gap-2">
-                  <Brain className="h-4 w-4" />
-                  View IRAI-Q2
+
+                <Button size="lg">
+
+                  Explore Space Research
+
                 </Button>
-                <Button size="lg" variant="outline" className="gap-2">
-                  <Telescope className="h-4 w-4" />
-                  Research Papers
+
+                <Button size="lg" variant="outline">
+
+                  View Ongoing Projects
+
                 </Button>
+
               </div>
+
             </div>
+
           </AnimatedSection>
+
         </div>
+
       </section>
 
-      {/* Capabilities */}
-      <section className="py-24 relative">
+
+
+      {/* CAPABILITIES */}
+
+      <section className="py-24">
+
         <div className="container mx-auto px-4 lg:px-8">
+
           <AnimatedSection>
+
             <div className="text-center max-w-3xl mx-auto mb-16">
+
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Core{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
-                  Capabilities
-                </span>
+
+                Astronomy Capabilities
+
               </h2>
+
               <p className="text-lg text-muted-foreground">
-                Our astronomy division combines traditional astronomical methods with
-                modern AI and computational techniques.
+
+                Core technologies supporting intelligent space observation,
+                image denoising pipelines, and astronomical data analytics workflows.
+
               </p>
+
             </div>
+
           </AnimatedSection>
 
-          <StaggeredContainer className="grid md:grid-cols-2 gap-8" staggerDelay={150}>
-            {capabilities.map((capability) => (
-              <Card key={capability.title} className="group hover:border-cyan-500/50 transition-all">
+
+          <StaggeredContainer
+            className="grid md:grid-cols-2 gap-8"
+            staggerDelay={150}
+          >
+
+            {capabilities.map(capability => (
+
+              <Card
+                key={capability.title}
+                className="hover:border-cyan-500/40 transition-all"
+              >
+
                 <CardHeader>
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="p-2 bg-cyan-500/10 rounded-lg group-hover:bg-cyan-500/20 transition-colors">
+
+                  <div className="flex items-center gap-3">
+
+                    <div className="p-2 bg-cyan-500/10 rounded-lg">
+
                       <capability.icon className="h-5 w-5 text-cyan-500" />
+
                     </div>
-                    <CardTitle className="text-xl">{capability.title}</CardTitle>
+
+                    <CardTitle>
+
+                      {capability.title}
+
+                    </CardTitle>
+
                   </div>
+
                 </CardHeader>
+
+
                 <CardContent>
-                  <p className="text-muted-foreground mb-4">{capability.description}</p>
+
+                  <p className="text-muted-foreground mb-4">
+
+                    {capability.description}
+
+                  </p>
+
+
                   <div className="flex flex-wrap gap-2">
-                    {capability.features.map((feature) => (
-                      <Badge key={feature} variant="outline" className="text-xs">
-                        {feature}
+
+                    {capability.tags.map(tag => (
+
+                      <Badge key={tag} variant="outline">
+
+                        {tag}
+
                       </Badge>
+
                     ))}
+
                   </div>
+
                 </CardContent>
+
               </Card>
+
             ))}
+
           </StaggeredContainer>
+
         </div>
+
       </section>
 
-      {/* Projects */}
-      <section className="py-24 relative bg-muted/30">
+
+
+      {/* PROJECTS */}
+
+      <section className="py-24 bg-muted/30">
+
         <div className="container mx-auto px-4 lg:px-8">
+
           <AnimatedSection>
+
             <div className="text-center max-w-3xl mx-auto mb-16">
+
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Active{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
-                  Projects
-                </span>
+
+                Ongoing Research & Projects
+
               </h2>
+
               <p className="text-lg text-muted-foreground">
-                Current initiatives pushing the boundaries of astronomical research and technology.
+
+                AI-assisted solutions addressing challenges in astronomical
+                imaging and computational space observation workflows.
+
               </p>
+
             </div>
+
           </AnimatedSection>
 
-          <StaggeredContainer className="grid md:grid-cols-2 gap-8" staggerDelay={150}>
-            {projects.map((project) => (
-              <Card key={project.name} className="group hover:border-cyan-500/50 transition-all">
+
+          <StaggeredContainer
+            className="grid md:grid-cols-2 gap-8"
+            staggerDelay={150}
+          >
+
+            {projects.map(project => (
+
+              <Card
+                key={project.name}
+                className="hover:border-cyan-500/40 transition-all"
+              >
+
                 <CardHeader>
-                  <div className="flex justify-between items-start mb-2">
-                    <CardTitle className="text-xl">{project.name}</CardTitle>
-                    <Badge variant="secondary">{project.status}</Badge>
+
+                  <div className="flex justify-between">
+
+                    <CardTitle>
+
+                      {project.name}
+
+                    </CardTitle>
+
+                    <Badge variant="secondary">
+
+                      {project.status}
+
+                    </Badge>
+
                   </div>
+
                 </CardHeader>
+
+
                 <CardContent>
-                  <p className="text-muted-foreground mb-4">{project.description}</p>
+
+                  <p className="text-muted-foreground mb-4">
+
+                    {project.description}
+
+                  </p>
+
+
                   <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
-                      <Badge key={tech} variant="outline" className="text-xs">
-                        {tech}
+
+                    {project.tags.map(tag => (
+
+                      <Badge key={tag} variant="outline">
+
+                        {tag}
+
                       </Badge>
+
                     ))}
+
                   </div>
+
                 </CardContent>
+
               </Card>
+
             ))}
+
           </StaggeredContainer>
+
         </div>
+
       </section>
 
-      {/* Achievements */}
-      <section className="py-24 relative">
+
+
+      {/* DIVISION SUMMARY */}
+
+      <section className="py-24">
+
         <div className="container mx-auto px-4 lg:px-8">
+
           <AnimatedSection>
-            <div className="text-center max-w-3xl mx-auto mb-16">
+
+            <div className="text-center max-w-3xl mx-auto mb-12">
+
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Key{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
-                  Achievements
-                </span>
+
+                Astronomy & Space Systems Division
+
               </h2>
-              <p className="text-lg text-muted-foreground">
-                Milestones that demonstrate our leadership in astronomical technology.
-              </p>
+
             </div>
+
           </AnimatedSection>
+
 
           <div className="grid md:grid-cols-2 gap-6">
-            {achievements.map((achievement, index) => (
+
+            {focusAreas.map(area => (
+
               <div
-                key={index}
-                className="flex items-center gap-4 p-6 bg-card/50 rounded-xl border border-border/50 hover:border-cyan-500/50 transition-all"
+                key={area}
+                className="flex items-center gap-4 p-6 bg-card/50 rounded-xl border border-border/50 hover:border-cyan-500/40 transition-all"
               >
+
                 <div className="p-2 bg-cyan-500/10 rounded-lg">
+
                   <Zap className="h-5 w-5 text-cyan-500" />
+
                 </div>
-                <p className="text-muted-foreground">{achievement}</p>
+
+                <p className="text-muted-foreground">
+
+                  {area}
+
+                </p>
+
               </div>
+
             ))}
+
           </div>
+
         </div>
+
       </section>
+
     </PageWrapper>
+
   )
+
 }

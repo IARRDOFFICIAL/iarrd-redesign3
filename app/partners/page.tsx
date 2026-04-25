@@ -1,6 +1,7 @@
 "use client"
 
 import dynamic from "next/dynamic"
+import Image from "next/image"
 import { PageWrapper } from "@/components/immersive/page-wrapper"
 import {
   AnimatedSection,
@@ -36,19 +37,15 @@ export default function PartnersPage() {
               </span>
 
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-
-                Institutional Partnerships & Ecosystem Recognition
-
+                Institutional Partnerships & Technology Collaboration Network
               </h1>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
-
-                IARRD collaborates with institutional partners and participates
-                in national innovation ecosystem programs that support
-                contributor-driven engineering research across space systems,
-                defence technologies, marine platforms, and applied software
-                development initiatives.
-
+                IARRD collaborates with research organisations, innovation
+                ecosystem partners, and emerging aerospace technology companies
+                supporting contributor-driven engineering development across
+                satellite systems, propulsion research, marine platforms,
+                defence technologies, and applied computational infrastructure.
               </p>
 
             </div>
@@ -60,122 +57,106 @@ export default function PartnersPage() {
       </section>
 
 
-      {/* PARTNERS */}
+
+      {/* TECHNOLOGY COLLABORATION PARTNERS */}
 
       <section className="pb-24">
 
         <div className="container mx-auto px-4 lg:px-8">
 
           <AnimatedSection>
-
             <h2 className="text-2xl font-bold mb-10">
-
-              Institutional Partner
-
+              Technology Collaboration Partners
             </h2>
-
           </AnimatedSection>
-
 
           <StaggeredContainer className="grid md:grid-cols-2 gap-8">
 
-            {/* NTLS GROUPS */}
+
+            {/* SPACEMURAK */}
 
             <div className="p-6 rounded-2xl border border-border bg-card/50 backdrop-blur">
 
+              <Image
+                src="/partners/spacemurak.png"
+                alt="SpaceMurak Logo"
+                width={160}
+                height={80}
+                className="mb-4 opacity-90"
+              />
+
               <h3 className="text-lg font-semibold mb-3">
-
-                NTLS Groups
-
+                SpaceMurak Aerospace
               </h3>
 
               <p className="text-muted-foreground text-sm leading-relaxed">
-
-                NTLS Groups collaborates with IARRD in supporting organisational
-                coordination, contributor ecosystem development, and engineering
-                programme expansion aligned with ongoing research initiatives.
-
+                SpaceMurak collaborates with IARRD on propulsion-oriented
+                research exploration supporting emerging green propulsion
+                technology concepts aligned with sustainable aerospace
+                engineering initiatives.
               </p>
 
             </div>
+
 
           </StaggeredContainer>
 
         </div>
 
       </section>
+
+
+
+      {/* INSTITUTIONAL PARTNERS */}
+
+      <section className="pb-24">
+
+        <div className="container mx-auto px-4 lg:px-8">
+
+          <AnimatedSection>
+            <h2 className="text-2xl font-bold mb-10">
+              Institutional Coordination Partners
+            </h2>
+          </AnimatedSection>
+
+          <StaggeredContainer className="grid md:grid-cols-2 gap-8">
+
+
+            {/* NTLS */}
+
+            <div className="p-6 rounded-2xl border border-border bg-card/50 backdrop-blur">
+
+              <Image
+                src="/partners/ntls.png"
+                alt="NTLS Groups Logo"
+                width={160}
+                height={80}
+                className="mb-4 opacity-90"
+              />
+
+              <h3 className="text-lg font-semibold mb-3">
+                NTLS Groups
+              </h3>
+
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                NTLS Groups collaborates with IARRD through a formal MoU
+                supporting contributor ecosystem development, engineering
+                education programs, and institutional research engagement
+                initiatives aligned with long-term capability building.
+              </p>
+
+            </div>
+
+
+          </StaggeredContainer>
+
+        </div>
+
+      </section>
+
 
 
       {/* RECOGNITIONS */}
-
-      <section className="pb-24">
-
-        <div className="container mx-auto px-4 lg:px-8">
-
-          <AnimatedSection>
-
-            <h2 className="text-2xl font-bold mb-10">
-
-              Recognition & Registrations
-
-            </h2>
-
-          </AnimatedSection>
-
-
-          <StaggeredContainer className="grid md:grid-cols-2 gap-8">
-
-            {/* MSME */}
-
-            <div className="p-6 rounded-2xl border border-border bg-card/50 backdrop-blur">
-
-              <h3 className="text-lg font-semibold mb-3">
-
-                MSME Registration
-
-              </h3>
-
-              <p className="text-muted-foreground text-sm leading-relaxed">
-
-                IARRD is registered under India’s Micro, Small and Medium
-                Enterprises (MSME) framework supporting engineering innovation,
-                research-oriented development activity, and institutional
-                capability growth.
-
-              </p>
-
-            </div>
-
-
-            {/* STARTUP INDIA */}
-
-            <div className="p-6 rounded-2xl border border-border bg-card/50 backdrop-blur">
-
-              <h3 className="text-lg font-semibold mb-3">
-
-                Startup India Ecosystem Participation
-
-              </h3>
-
-              <p className="text-muted-foreground text-sm leading-relaxed">
-
-                IARRD participates within the Startup India innovation ecosystem,
-                enabling access to national startup support structures and
-                contributing to India’s emerging deep-technology development
-                landscape.
-
-              </p>
-
-            </div>
-
-          </StaggeredContainer>
-
-        </div>
-
-      </section>
-
-
-      {/* FUTURE PARTNERSHIPS */}
 
       <section className="pb-32">
 
@@ -183,36 +164,46 @@ export default function PartnersPage() {
 
           <AnimatedSection>
 
-            <div className="max-w-3xl">
+            <h2 className="text-2xl font-bold mb-10">
+              Recognition & Registrations
+            </h2>
 
-              <h2 className="text-2xl font-bold mb-6">
+          </AnimatedSection>
 
-                Future Collaboration Opportunities
 
-              </h2>
+          <StaggeredContainer className="grid md:grid-cols-2 gap-8">
 
-              <p className="text-muted-foreground leading-relaxed mb-6">
 
-                IARRD welcomes collaboration with academic institutions,
-                engineering organizations, research laboratories, and technology
-                ecosystem partners interested in contributing to long-term
-                indigenous capability development across space systems,
-                autonomy platforms, marine monitoring technologies, and applied
-                engineering software initiatives.
+            <div className="p-6 rounded-2xl border border-border bg-card/50 backdrop-blur">
 
-              </p>
+              <h3 className="text-lg font-semibold mb-3">
+                MSME Registration
+              </h3>
 
-              <p className="text-xs text-muted-foreground/70">
-
-                Institutional relationships listed represent active collaboration,
-                ecosystem participation, or recognised innovation programme
-                registrations supporting engineering research development.
-
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                IARRD operates under India’s MSME innovation framework supporting
+                early-stage engineering research capability development.
               </p>
 
             </div>
 
-          </AnimatedSection>
+
+            <div className="p-6 rounded-2xl border border-border bg-card/50 backdrop-blur">
+
+              <h3 className="text-lg font-semibold mb-3">
+                Startup India Ecosystem Participation
+              </h3>
+
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Participation within the Startup India ecosystem supports access
+                to national innovation infrastructure and emerging deep-technology
+                collaboration opportunities.
+              </p>
+
+            </div>
+
+
+          </StaggeredContainer>
 
         </div>
 
