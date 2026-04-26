@@ -1,21 +1,38 @@
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Inter, Space_Grotesk } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
+
+/* ===============================
+FONTS
+=============================== */
+
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-inter"
+  variable: "--font-inter",
+  display: "swap"
 })
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-space-grotesk"
+  variable: "--font-space-grotesk",
+  display: "swap"
 })
 
 
 /* ===============================
-SITE METADATA
+VIEWPORT (App Router safe method)
+=============================== */
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1
+}
+
+
+/* ===============================
+METADATA
 =============================== */
 
 export const metadata: Metadata = {
@@ -24,24 +41,7 @@ export const metadata: Metadata = {
     "IARRD – Indian Astronomy Rocket Research and Development",
 
   description:
-    "IARRD is a multidisciplinary engineering research initiative working on CubeSat platforms, autonomous defence systems, marine monitoring technologies, astronomy ground infrastructure, and applied engineering software through contributor-driven development.",
-
-  keywords: [
-    "IARRD",
-    "CubeSat India",
-    "Indian satellite research",
-    "student space research India",
-    "defence drone research India",
-    "marine monitoring research",
-    "astronomy research India",
-    "indigenous engineering India"
-  ],
-
-  authors: [{ name: "IARRD Team" }],
-
-  creator: "IARRD",
-
-  publisher: "IARRD",
+    "IARRD is a multidisciplinary engineering research initiative working on CubeSat platforms, defence systems, marine monitoring technologies, astronomy infrastructure, and applied engineering software.",
 
   metadataBase: new URL("https://iarrd.in"),
 
@@ -49,18 +49,13 @@ export const metadata: Metadata = {
     canonical: "/"
   },
 
-
-  /* ===============================
-OPEN GRAPH
-=============================== */
-
   openGraph: {
 
     title:
       "IARRD – Indian Astronomy Rocket Research and Development",
 
     description:
-      "Contributor-driven engineering research across satellite systems, defence technologies, marine monitoring platforms, and astronomy ground infrastructure.",
+      "Contributor-driven engineering research across satellite systems, defence technologies, marine monitoring platforms, and astronomy infrastructure.",
 
     url: "https://iarrd.in",
 
@@ -70,21 +65,13 @@ OPEN GRAPH
       {
         url: "/og-image.jpg",
         width: 1200,
-        height: 630,
-        alt:
-          "IARRD – Indigenous Engineering Research Across Space, Defence, Marine and Autonomous Systems"
+        height: 630
       }
     ],
 
     locale: "en_US",
-
     type: "website"
   },
-
-
-  /* ===============================
-TWITTER
-=============================== */
 
   twitter: {
 
@@ -101,50 +88,23 @@ TWITTER
     creator: "@iarrd_in"
   },
 
-
-  /* ===============================
-ROBOTS
-=============================== */
-
   robots: {
 
     index: true,
-
-    follow: true,
-
-    googleBot: {
-
-      index: true,
-
-      follow: true,
-
-      "max-video-preview": -1,
-
-      "max-image-preview": "large",
-
-      "max-snippet": -1
-    }
+    follow: true
   },
-
-
-  /* ===============================
-ICONS
-=============================== */
 
   icons: {
 
     icon: [
-
       {
         url: "/icon-light-32x32.png",
         media: "(prefers-color-scheme: light)"
       },
-
       {
         url: "/icon-dark-32x32.png",
         media: "(prefers-color-scheme: dark)"
       },
-
       {
         url: "/icon.svg",
         type: "image/svg+xml"
@@ -156,7 +116,6 @@ ICONS
 }
 
 
-
 /* ===============================
 ROOT LAYOUT
 =============================== */
@@ -166,11 +125,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-
-
-  /* ===============================
-STRUCTURED ORG DATA (SEO)
-=============================== */
 
   const jsonLd = {
 
@@ -189,9 +143,6 @@ STRUCTURED ORG DATA (SEO)
 
     foundingDate: "2023-05-27",
 
-    description:
-      "Multidisciplinary engineering research initiative working on CubeSat systems, defence UAV platforms, marine monitoring technologies, astronomy ground infrastructure and engineering software development.",
-
     email: "iarrd.official@gmail.com",
 
     address: {
@@ -206,9 +157,7 @@ STRUCTURED ORG DATA (SEO)
     },
 
     sameAs: [
-
       "https://instagram.com/iarrd.official",
-
       "https://linkedin.com/company/iarrd"
     ]
   }
@@ -216,25 +165,25 @@ STRUCTURED ORG DATA (SEO)
 
   return (
 
-    <html lang="en" className="dark">
-
-      <head>
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLd)
-          }}
-        />
-
-      </head>
-
+    <html
+      lang="en"
+      className="dark scroll-smooth"
+      suppressHydrationWarning
+    >
 
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}
+        className={`
+          ${inter.variable}
+          ${spaceGrotesk.variable}
+          font-sans
+          antialiased
+          overflow-x-hidden
+          bg-background
+          text-foreground
+        `}
       >
 
-        {/* ACCESSIBILITY */}
+        {/* ACCESSIBILITY SKIP LINK */}
 
         <a
           href="#main-content"
@@ -244,7 +193,21 @@ STRUCTURED ORG DATA (SEO)
         </a>
 
 
-        {children}
+        {/* STRUCTURED DATA */}
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd)
+          }}
+        />
+
+
+        <main id="main-content">
+
+          {children}
+
+        </main>
 
 
         <Analytics />
