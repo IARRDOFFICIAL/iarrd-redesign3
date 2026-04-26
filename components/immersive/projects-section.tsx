@@ -4,9 +4,13 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { AnimatedText } from "@/components/animated-text"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { ArrowRight, Satellite, Brain, Telescope } from "lucide-react"
+import { ArrowRight, Satellite, Radio, Telescope } from "lucide-react"
 import Link from "next/link"
 
+
+/* ===============================
+PROJECT TYPE
+=============================== */
 
 interface Project {
 
@@ -22,15 +26,20 @@ interface Project {
 }
 
 
+/* ===============================
+PROJECT DATA
+=============================== */
+
 const projects: Project[] = [
 
   {
     id: "prithivisat",
+
     name: "PrithiviSat",
 
     description:
 
-      "PrithiviSat is a conceptual CubeSat mission architecture exploring environmental monitoring workflows and AI-assisted onboard processing approaches using affordable small-satellite platforms.",
+      "PrithiviSat is a 2U CubeSat mission architecture initiative focused on developing an affordable satellite learning platform supporting environmental monitoring concepts and contributor-level subsystem engineering exposure.",
 
     icon: <Satellite className="h-8 w-8" />,
 
@@ -46,17 +55,18 @@ const projects: Project[] = [
 
   {
     id: "irai-q2",
+
     name: "IRAI-Q2",
 
     description:
 
-      "IRAI-Q2 explores algorithmic approaches for astronomy intelligence workflows including celestial object tracking experimentation, observational scheduling logic, and AI-assisted analysis pipelines.",
+      "IRAI-Q2 explores CubeSat-assisted communication relay architectures enabling beyond-line-of-sight connectivity for multi-UAV systems through link-budget modelling, LEO visibility simulation, and hybrid communication workflow design.",
 
-    icon: <Brain className="h-8 w-8" />,
+    icon: <Radio className="h-8 w-8" />,
 
-    stage: "Algorithm Research Phase",
+    stage: "Communication Architecture Simulation",
 
-    focus: "Astronomy Intelligence Software",
+    focus: "Satellite-Assisted UAV Connectivity",
 
     href: "/projects/irai-q2",
 
@@ -66,17 +76,18 @@ const projects: Project[] = [
 
   {
     id: "astronomy-ground",
-    name: "Astronomy Ground Systems",
+
+    name: "Astronomy Ground Support Systems",
 
     description:
 
-      "Ground systems research investigates telescope workflow integration, observational coordination tools, and satellite awareness experimentation supporting future astronomy infrastructure capability development.",
+      "Astronomy ground-support activities focus on developing computational workflows for astronomical image processing, celestial object detection experimentation, and preparation for future observation infrastructure programs.",
 
     icon: <Telescope className="h-8 w-8" />,
 
-    stage: "Infrastructure Concept Exploration",
+    stage: "Observation Workflow Development",
 
-    focus: "Observation Support Systems",
+    focus: "Computational Astronomy Systems",
 
     href: "/projects/astronomy-tools",
 
@@ -85,6 +96,11 @@ const projects: Project[] = [
 
 ]
 
+
+
+/* ===============================
+CARD COMPONENT
+=============================== */
 
 function ProjectCard({
 
@@ -151,7 +167,7 @@ function ProjectCard({
       <div className="relative z-10">
 
 
-        {/* Icon + Stage */}
+        {/* ICON + STAGE */}
 
         <div className="mb-4 flex items-start justify-between">
 
@@ -199,7 +215,7 @@ function ProjectCard({
         </div>
 
 
-        {/* Title */}
+        {/* TITLE */}
 
         <h3 className="mb-2 text-xl font-semibold text-foreground">
 
@@ -208,7 +224,7 @@ function ProjectCard({
         </h3>
 
 
-        {/* Description */}
+        {/* DESCRIPTION */}
 
         <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
 
@@ -217,7 +233,7 @@ function ProjectCard({
         </p>
 
 
-        {/* Focus Area */}
+        {/* FOCUS AREA */}
 
         <div className="mb-6 flex items-center gap-2 text-xs text-muted-foreground">
 
@@ -283,13 +299,18 @@ function ProjectCard({
 }
 
 
+
+/* ===============================
+SECTION
+=============================== */
+
 export function ProjectsSection({
 
   title = "Active Research Programs",
 
   description =
 
-    "IARRD currently focuses on early-stage mission architecture development across satellite systems, autonomous observation workflows, and astronomy infrastructure supporting long-term indigenous engineering capability growth.",
+    "IARRD currently focuses on early-stage engineering architecture development across satellite systems, communication infrastructure concepts, and computational astronomy workflows supporting long-term indigenous capability building.",
 
 }) {
 
@@ -297,7 +318,8 @@ export function ProjectsSection({
 
     <section id="projects" className="relative py-24 lg:py-32">
 
-      {/* Background */}
+
+      {/* BACKGROUND */}
 
       <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 via-background to-background" />
 
@@ -305,7 +327,7 @@ export function ProjectsSection({
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
 
 
-        {/* Header */}
+        {/* HEADER */}
 
         <div className="mx-auto max-w-2xl text-center">
 
@@ -336,19 +358,16 @@ export function ProjectsSection({
 
             <p className="mt-4 text-pretty text-lg text-muted-foreground">
 
-              These initiatives represent IARRD’s ongoing contributor-driven engineering research
-
-              across satellite systems, astronomy intelligence workflows, and observational infrastructure development.
+              These initiatives represent IARRD’s ongoing contributor-driven engineering research across satellite mission architecture, UAV communication relay concepts, and astronomy observation support systems.
 
             </p>
 
           </AnimatedText>
 
-
         </div>
 
 
-        {/* Cards */}
+        {/* GRID */}
 
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
