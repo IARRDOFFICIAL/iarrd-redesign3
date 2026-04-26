@@ -27,7 +27,8 @@ VIEWPORT (App Router safe method)
 
 export const viewport: Viewport = {
   width: "device-width",
-  initialScale: 1
+  initialScale: 1,
+  maximumScale: 1
 }
 
 
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
     "IARRD – Indian Astronomy Rocket Research and Development",
 
   description:
-    "IARRD is a multidisciplinary engineering research initiative working on CubeSat platforms, defence systems, marine monitoring technologies, astronomy infrastructure, and applied engineering software.",
+    "IARRD is a contributor-driven multidisciplinary engineering research initiative advancing indigenous capability across satellite systems, defence technologies, marine monitoring platforms, astronomy infrastructure, and applied engineering software.",
 
   metadataBase: new URL("https://iarrd.in"),
 
@@ -49,13 +50,53 @@ export const metadata: Metadata = {
     canonical: "/"
   },
 
+
+  /* ===============================
+  FAVICONS
+  =============================== */
+
+  icons: {
+
+    icon: [
+
+      {
+        url: "/icon-dark-32x32.png",
+        media: "(prefers-color-scheme: dark)"
+      },
+
+      {
+        url: "/icon-light-32x32.png",
+        media: "(prefers-color-scheme: light)"
+      },
+
+      {
+        url: "/icon.svg",
+        type: "image/svg+xml"
+      },
+
+      {
+        url: "/icon.png",
+        sizes: "512x512",
+        type: "image/png"
+      }
+
+    ],
+
+    apple: "/apple-icon.png"
+  },
+
+
+  /* ===============================
+  OPEN GRAPH
+  =============================== */
+
   openGraph: {
 
     title:
       "IARRD – Indian Astronomy Rocket Research and Development",
 
     description:
-      "Contributor-driven engineering research across satellite systems, defence technologies, marine monitoring platforms, and astronomy infrastructure.",
+      "Engineering research initiative developing CubeSat platforms, defence UAV systems, marine monitoring technologies and astronomy infrastructure.",
 
     url: "https://iarrd.in",
 
@@ -70,8 +111,14 @@ export const metadata: Metadata = {
     ],
 
     locale: "en_US",
+
     type: "website"
   },
+
+
+  /* ===============================
+  TWITTER
+  =============================== */
 
   twitter: {
 
@@ -81,37 +128,22 @@ export const metadata: Metadata = {
       "IARRD – Indian Astronomy Rocket Research and Development",
 
     description:
-      "Engineering research initiative developing CubeSat platforms, defence UAV systems, marine monitoring concepts and astronomy infrastructure.",
+      "Contributor-driven engineering research across satellite systems, defence technologies, marine monitoring platforms, and astronomy infrastructure.",
 
     images: ["/og-image.jpg"],
 
     creator: "@iarrd_in"
   },
 
+
+  /* ===============================
+  ROBOTS
+  =============================== */
+
   robots: {
 
     index: true,
     follow: true
-  },
-
-  icons: {
-
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)"
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)"
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml"
-      }
-    ],
-
-    apple: "/apple-icon.png"
   }
 }
 
@@ -139,7 +171,7 @@ export default function RootLayout({
 
     url: "https://iarrd.in",
 
-    logo: "https://iarrd.in/icon.svg",
+    logo: "https://iarrd.in/icon.png",
 
     foundingDate: "2023-05-27",
 
@@ -157,7 +189,9 @@ export default function RootLayout({
     },
 
     sameAs: [
+
       "https://instagram.com/iarrd.official",
+
       "https://linkedin.com/company/iarrd"
     ]
   }
@@ -203,12 +237,16 @@ export default function RootLayout({
         />
 
 
+        {/* MAIN CONTENT */}
+
         <main id="main-content">
 
           {children}
 
         </main>
 
+
+        {/* VERCEL ANALYTICS */}
 
         <Analytics />
 
