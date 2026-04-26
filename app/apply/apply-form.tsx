@@ -17,14 +17,14 @@ Select,
 SelectContent,
 SelectItem,
 SelectTrigger,
-SelectValue
+SelectValue,
 } from "@/components/ui/select"
 
 import {
 Card,
 CardContent,
 CardHeader,
-CardTitle
+CardTitle,
 } from "@/components/ui/card"
 
 
@@ -35,7 +35,6 @@ const SCRIPT_URL =
 
 
 const roles = [
-
 "Astronomy Research Team Member",
 "Defence Research Team Member",
 "Marine Research Team Member",
@@ -45,23 +44,21 @@ const roles = [
 "Software Development Team Member",
 "Social Media & Outreach Team Member",
 "Fundraising & Partnerships Team Member"
-
 ]
 
 
 
 export default function ApplyForm({
-roleFromURL
+roleFromURL,
 }: {
 roleFromURL: string
 }) {
 
 const [selectedRole, setSelectedRole] =
-useState(roleFromURL)
+useState(roleFromURL || "")
 
 const [submitted, setSubmitted] =
 useState(false)
-
 
 
 const [name, setName] = useState("")
@@ -92,26 +89,20 @@ formData.append("availability", availability)
 formData.append("portfolio", portfolio)
 
 
-
 try {
 
 await fetch(SCRIPT_URL, {
-
 method: "POST",
 body: formData,
-mode: "no-cors"
-
+mode: "no-cors",
 })
 
 setSubmitted(true)
 
-}
-
-catch (error) {
+} catch (error) {
 
 console.error(error)
-
-alert("Error submitting form.")
+alert("Submission failed. Please retry.")
 
 }
 
@@ -131,13 +122,9 @@ return (
 href="/careers"
 className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary mb-6"
 >
-
 <ArrowLeft className="h-4 w-4" />
-
 Back to Careers
-
 </Link>
-
 
 
 <AnimatedSection>
@@ -147,22 +134,16 @@ Back to Careers
 <CardHeader>
 
 <CardTitle className="text-3xl">
-
 Contributor Application
-
 </CardTitle>
 
-
 <p className="text-muted-foreground">
-
 IARRD selects contributors based on curiosity,
 consistency, and technical growth mindset —
 not CGPA or academic background.
-
 </p>
 
 </CardHeader>
-
 
 
 <CardContent>
@@ -172,17 +153,13 @@ not CGPA or academic background.
 <div className="text-center py-12">
 
 <h3 className="text-2xl font-semibold mb-4">
-
 Application Submitted Successfully
-
 </h3>
 
 <p className="text-muted-foreground">
-
 Your application has been recorded.
 The team will review and respond if aligned
 with active initiatives.
-
 </p>
 
 </div>
@@ -193,7 +170,6 @@ with active initiatives.
 onSubmit={handleSubmit}
 className="space-y-6"
 >
-
 
 <div>
 
@@ -253,23 +229,18 @@ onChange={(e)=>setLocation(e.target.value)}
 <Label>Applying Role</Label>
 
 <Select
-defaultValue={selectedRole}
+value={selectedRole}
 onValueChange={setSelectedRole}
 >
 
 <SelectTrigger>
-
 <SelectValue placeholder="Select role" />
-
 </SelectTrigger>
 
 <SelectContent>
 
 {roles.map(role=>(
-<SelectItem
-key={role}
-value={role}
->
+<SelectItem key={role} value={role}>
 {role}
 </SelectItem>
 ))}
@@ -285,29 +256,17 @@ value={role}
 
 <Label>Experience Level</Label>
 
-<Select
-onValueChange={setExperience}
->
+<Select onValueChange={setExperience}>
 
 <SelectTrigger>
-
 <SelectValue placeholder="Select level" />
-
 </SelectTrigger>
 
 <SelectContent>
 
-<SelectItem value="Beginner">
-Beginner
-</SelectItem>
-
-<SelectItem value="Intermediate">
-Intermediate
-</SelectItem>
-
-<SelectItem value="Advanced">
-Advanced
-</SelectItem>
+<SelectItem value="Beginner">Beginner</SelectItem>
+<SelectItem value="Intermediate">Intermediate</SelectItem>
+<SelectItem value="Advanced">Advanced</SelectItem>
 
 </SelectContent>
 
@@ -318,11 +277,7 @@ Advanced
 
 <div>
 
-<Label>
-
-Why do you want to contribute to IARRD?
-
-</Label>
+<Label>Motivation</Label>
 
 <Textarea
 required
@@ -336,11 +291,7 @@ onChange={(e)=>setMotivation(e.target.value)}
 
 <div>
 
-<Label>
-
-Weekly Availability (hours)
-
-</Label>
+<Label>Weekly Availability</Label>
 
 <Input
 value={availability}
@@ -352,11 +303,7 @@ onChange={(e)=>setAvailability(e.target.value)}
 
 <div>
 
-<Label>
-
-GitHub / Portfolio (optional)
-
-</Label>
+<Label>Portfolio (optional)</Label>
 
 <Input
 value={portfolio}
@@ -366,10 +313,7 @@ onChange={(e)=>setPortfolio(e.target.value)}
 </div>
 
 
-<Button
-type="submit"
-className="w-full gap-2"
->
+<Button type="submit" className="w-full gap-2">
 
 <Send className="h-4 w-4" />
 
