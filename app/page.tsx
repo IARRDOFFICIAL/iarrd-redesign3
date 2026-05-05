@@ -2,6 +2,7 @@
 
 import { ImmersiveNavigation } from "@/components/immersive/navigation"
 import { ImmersiveHero } from "@/components/immersive/hero"
+import { NewsHighlight } from "@/components/immersive/news-highlight"
 
 import {
   AstronomySection,
@@ -35,7 +36,7 @@ export default function HomePage() {
 
       <ImmersiveHero />
 
-
+      <NewsHighlight />
       {/* DOMAINS ANCHOR */}
 
       <div id="domains" className="scroll-mt-20" />

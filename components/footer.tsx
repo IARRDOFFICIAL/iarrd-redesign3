@@ -39,7 +39,7 @@ export function Footer() {
               Building India&apos;s next-generation space infrastructure.
             </p>
             <p className="text-xs text-muted-foreground">
-              Hyderabad, India
+              TamilNadu, India
             </p>
           </div>
 
