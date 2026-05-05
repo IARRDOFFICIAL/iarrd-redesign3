@@ -68,7 +68,7 @@ export default function WorkshopPage() {
         <div className="space-y-4">
           <h2 className="text-2xl font-bold text-white">Decoding the Cosmos</h2>
           <p className="text-lg leading-relaxed text-slate-300">
-            Led by our Chief Scientific Officer, Tamizh Amuthan, attendees were taken through a custom-built, interactive 3D web experience. Instead of traditional presentations, we decoded the terrifying realities of Black Holes, Space-Time Paradoxes, and Interstellar Travel through pure physics and native Tamil.
+            Led by our Chief Strategic Officer, Tamizh Amuthan, attendees were taken through a custom-built, interactive 3D web experience. Instead of traditional presentations, we decoded the terrifying realities of Black Holes, Space-Time Paradoxes, and Interstellar Travel through pure physics and native Tamil.
           </p>
         </div>
 
@@ -91,15 +91,14 @@ export default function WorkshopPage() {
           </p>
           
           <div className="relative z-10 pt-4">
-            <a 
-              href="YOUR_GOOGLE_FORM_LINK_HERE" 
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 px-8 rounded-full transition-all hover:scale-105 active:scale-95 shadow-lg shadow-indigo-500/25"
-            >
-              Secure Your Seat for Just ₹99
-              <ArrowRight className="w-5 h-5" />
-            </a>
+           <a
+  href="https://docs.google.com/forms/d/e/1FAIpQLSfGmDyKMyRlpnQe-31zM-36gsFPRsYhkpwr0IcuIz1E0mgabQ/viewform?usp=publish-editor"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 px-6 rounded-full transition-all"
+>
+  Register for Part 2
+</a>
           </div>
         </div>
 
