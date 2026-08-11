@@ -165,7 +165,7 @@ export default function PartnersPage() {
             <div className="p-6 rounded-2xl border border-border bg-card/50 backdrop-blur">
 
               <Image
-                src="/partners/arashi.png"
+                src="/partners/aarshi.png"
                 alt="Arashi Scientific Publishers Logo"
                 width={200}
                 height={90}
