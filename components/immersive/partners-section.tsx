@@ -14,6 +14,7 @@ export function PartnersSection() {
     "/partners/spacemurak.png",
     "/partners/startup-tn.png",
     "/partners/inspace.png",
+    "/partners/aarshi.png",
     "/partners/departmentofspace.png",
     "/partners/ministryofdefence.png",
   ]
