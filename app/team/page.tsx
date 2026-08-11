@@ -85,9 +85,9 @@ const teamLeads = [
   },
 
   {
-    name: "Mohammed Ayaz",
+    name: "Mohammed Nabeel",
     role: "Software Development Team Lead",
-    image: "/team/ayaz.jpg",
+    image: "/team/nabeel.jpg",
     bio:
       "Leads development of edutech platforms, simulation tools, and internal engineering software supporting IARRD programs."
   },
